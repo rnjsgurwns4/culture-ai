@@ -23,8 +23,6 @@ class IntRequest(BaseModel):
 def recommend(request: RecommendationRequest):
     contents = get_recommendations(request.user_id, top_n=3)
 
-    if not contents:  # 빈 리스트면
-        contents = [1, 2, 3]  # 기본값 설정
     return {"recommended_contents": contents}
 
 @app.post("/run-model")
@@ -66,7 +64,7 @@ def scheduled_job():
 # APScheduler 설정 및 실행
 scheduler = AsyncIOScheduler()
 # 매일 새벽 1시 (01:00)에 실행
-scheduler.add_job(scheduled_job, 'cron', hour=8, minute=39)
+scheduler.add_job(scheduled_job, 'cron', hour=1, minute=0)
 scheduler.start()
 
 # uvicorn을 asyncio 이벤트 루프에서 실행 시켰을 때 scheduler가 작동함을 보장하기 위해 빈 async 함수 실행
