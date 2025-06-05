@@ -17,8 +17,8 @@ uvicorn main:app --reload
 
 ## OS에 따라서 오류 발생 가능성 있음
 
--> main.py 36번째 줄 window라면 ["python", "모델_mysql연동.py"]로
+-> main.py 36번째 줄: window라면 ["python", "모델_mysql연동.py"]로,
 linux라면 ["python3", "모델_mysql연동.py"]로 변경
 
--> main.py 54번째 줄 window라면 ["python", "모델_mysql연동.py"]로
+-> main.py 54번째 줄: window라면 ["python", "모델_mysql연동.py"]로,
 linux라면 ["python3", "모델_mysql연동.py"]로 변경
