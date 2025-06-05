@@ -22,3 +22,7 @@ linux라면 ["python3", "모델_mysql연동.py"]로 변경
 
 -> main.py 54번째 줄: window라면 ["python", "모델_mysql연동.py"]로,
 linux라면 ["python3", "모델_mysql연동.py"]로 변경
+
+## 주의사항
+
+db_config.py랑 모델_mysql연동.py 윗부분에 mysql 비밀번호 변경 필수
