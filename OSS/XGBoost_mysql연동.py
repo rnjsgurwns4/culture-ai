@@ -775,7 +775,7 @@ print(f"중분류가 다른 경우의 비율: {diff_ratio:.2%}")
 
 
 # 추천 결과 저장
-final_recommendations.to_csv("final_recommendations.csv", index=False)
+final_recommendations.to_csv("xgboost_recommendations.csv", index=False)
 
 
 # In[ ]:
