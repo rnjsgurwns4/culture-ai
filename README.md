@@ -26,4 +26,4 @@ linux: ["python3", ""]
 
 ## 주의사항
 
-db_config.py랑 모델_mysql연동.py 윗부분에 mysql 비밀번호 변경 필수
+db_config.py랑 XGBoost_mysql연동.py, Surprise_mysql연동.py 윗부분에 mysql 비밀번호 변경 필수
