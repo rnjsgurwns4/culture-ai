@@ -205,5 +205,5 @@ top_n = (
     .head(3)
     .reset_index(drop=True)
 )
-top_n.to_csv("xgboost_recommendations1.csv", index=False)
+top_n.to_csv("xgboost_recommendations.csv", index=False)
 print("추천 결과 저장 완료:", top_n.shape)
