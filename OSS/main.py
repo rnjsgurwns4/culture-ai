@@ -23,10 +23,6 @@ class IntRequest(BaseModel):
 def recommend(request: RecommendationRequest):
     contents = get_hybrid_recommendations(request.user_id, top_n_each=3)
     
-    if len(contents) == 3:
-        for i in range(1, 4):
-            contents.append(i)
-    print(contents)
     
     return {"recommended_contents": contents}
 
