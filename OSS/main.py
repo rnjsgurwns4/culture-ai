@@ -23,10 +23,7 @@ class IntRequest(BaseModel):
 def recommend(request: RecommendationRequest):
     contents = get_hybrid_recommendations(request.user_id, top_n_each=3)
     
-    if len(contents) == 3:
-        for i in range(1, 4):
-            contents.append(i)
-
+    
     return {"recommended_contents": contents}
 
 @app.post("/run-model")
@@ -35,13 +32,13 @@ def run_notebook(data: IntRequest):
         
         try:
             result1 = subprocess.run(
-            ["python", "XGBoost_mysql연동.py"],
+            ["python", "Collaborative_mysql연동.py"],
             capture_output=True,  # stdout/stderr 모두 잡기
             text=True,            # 출력 문자열로 받기
             check=True            # 오류 발생 시 예외 던짐
         )
             result2 = subprocess.run(
-            ["python", "Surprise_mysql연동.py"],
+            ["python", "XGBoost_mysql연동.py"],
             capture_output=True,  # stdout/stderr 모두 잡기
             text=True,            # 출력 문자열로 받기
             check=True            # 오류 발생 시 예외 던짐
@@ -66,10 +63,10 @@ def scheduled_job():
             check=True
         )
         result2 = subprocess.run(
-        ["python", "Surprise_mysql연동.py"],
-        capture_output=True,  # stdout/stderr 모두 잡기
-        text=True,            # 출력 문자열로 받기
-        check=True            # 오류 발생 시 예외 던짐
+            ["python", "Collaborative_mysql연동.py"],
+            capture_output=True,  # stdout/stderr 모두 잡기
+            text=True,            # 출력 문자열로 받기
+            check=True            # 오류 발생 시 예외 던짐
         )
         
         print("스케줄러 정상 실행됨:")

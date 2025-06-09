@@ -130,5 +130,5 @@ print("사용자별 추천 결과 (샘플):\n", recommend_df.head(20))
 
 
 recommend_df.rename(columns={'like_count': 'score'}, inplace=True)
-recommend_df.to_csv("surprise_recommendations.csv", index=False)
+recommend_df.to_csv("collaborative_recommendations.csv", index=False)
 
