@@ -5,6 +5,7 @@ from recommend_model import get_hybrid_recommendations
 import subprocess
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import asyncio
+import random
 
 app = FastAPI(title="Hybrid Recommendation API")
 
